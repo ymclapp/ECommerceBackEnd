@@ -12,6 +12,14 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
+const db = require("./app/config/models");
+const Role = db.role;
+
+db.sequelize.sync({force:  true}).then(() => {//in production create three rows manually and use sync() without parameters to avoid dropping data
+    console.log('Drop and Resync Db');
+    initial();
+});
+
 //parse requests of content-type - application/json
 app.use(bodyParser.json());
 
@@ -28,4 +36,23 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Listening on http://localhost:${PORT}.`);
 })
+
+function initial() {  //do not do this in production.  Just manually add the three rows
+    Role.create({
+        id:  1,
+        name:  "user"
+    });
+
+    Role.create({
+        id:  2,
+        name:  "moderator"
+    });
+
+    Role.create({
+        id:  3,
+        name:  "moderator"
+    });
+}
+
+
 
