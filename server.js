@@ -26,10 +26,15 @@ app.use(bodyParser.json());
 //parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended:  true }));
 
+
+//ROUTES
 //simple route
 app.get("/", (req, res) => {
     res.json({ message:  "Welcome to the ecommerce application.  Shall we play a game?"});
 });
+
+require("./app/routes/auth.routes")(app);
+require("./app/routes/user.routes")(app);
 
 //set port, listen for requests
 const PORT = process.env.PORT || 8080;
