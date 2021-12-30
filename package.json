@@ -25,6 +25,7 @@
     "express": "^4.17.2",
     "node.js": "^0.0.1-security",
     "pg": "^8.7.1",
+    "sequelize": "^6.12.4",
     "superagent": "^6.1.0"
   }
 }
