@@ -14,6 +14,11 @@ app.use(cors(corsOptions));
 
 const db = require("./app/models");
 const Role = db.role;
+const controller = require("./app/controllers/tutorial.controller");
+
+const run = async () => {
+
+};
 
 //db.sequelize.sync({force:  true}).then(() => {//in production create three rows manually and use sync() without parameters to avoid dropping data
 //    console.log('Drop and Resync Db');
