@@ -55,7 +55,7 @@ function initial() {  //do not do this in production.  Just manually add the thr
 
     Role.create({
         id:  3,
-        name:  "moderator"
+        name:  "admin"
     });
 }
 
