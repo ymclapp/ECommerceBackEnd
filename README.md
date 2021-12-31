@@ -15,3 +15,4 @@
 
 ###  Referenced:
 1.  https://www.bezkoder.com/node-js-jwt-authentication-postgresql/
+2.  https://www.bezkoder.com/react-node-express-postgresql/
