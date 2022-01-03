@@ -24,10 +24,10 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.user = require("../models/user.model")(sequelize, Sequelize);
-db.role = require("../models/role.model")(sequelize, Sequelize);
-db.tutorials = require("../models/tutorial.model")(sequelize, Sequelize);
-db.comments = require("../models/comment.model")(sequelize, Sequelize);
+db.user = require("./user.model")(sequelize, Sequelize);
+db.role = require("./role.model")(sequelize, Sequelize);
+db.tutorials = require("./tutorial.model")(sequelize, Sequelize);
+db.comments = require("./comment.model")(sequelize, Sequelize);
 
 db.role.belongsToMany(db.user, { //many-to-many relationship with user:  one user can have several roles/one role can be used by many users
     through:  "user_roles",//new table user_roles as the connection between users and roles tables via their primary keys as foreign keys
